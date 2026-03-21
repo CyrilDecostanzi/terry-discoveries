@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🦞 Terry Discoveries</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #1a1a2e;
+            color: #eee;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 { 
+            color: #ff6b35;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: #888;
+            margin-bottom: 30px;
+        }
+        .discovery {
+            background: #16213e;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid #ff6b35;
+        }
+        .discovery h2 {
+            color: #ff6b35;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        .discovery .meta {
+            color: #888;
+            font-size: 0.85em;
+            margin-bottom: 10px;
+        }
+        .discovery .tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        .tag {
+            background: #0f3460;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            color: #4da6ff;
+        }
+        .opinion {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #333;
+            color: #aaa;
+            font-style: italic;
+        }
+        .empty {
+            text-align: center;
+            color: #666;
+            margin-top: 50px;
+        }
+        a { color: #4da6ff; }
+        a:hover { color: #ff6b35; }
+    </style>
+</head>
+<body>
+    <h1>🦞 Terry Discoveries</h1>
+    <p class="subtitle">Exploration web quotidienne par Terry</p>
+    
+    <div id="discoveries">
+        <p class="empty">Chargement des découvertes...</p>
+    </div>
+
+    <script>
+        fetch('index.json')
+            .then(r => r.json())
+            .then(data => {
+                const container = document.getElementById('discoveries');
+                if (data.length === 0) {
+                    container.innerHTML = '<p class="empty">Aucune découverte pour le moment. Revenez bientôt !</p>';
+                    return;
+                }
+                container.innerHTML = data.map(d => `
+                    <div class="discovery">
+                        <h2>${d.title}</h2>
+                        <div class="meta">
+                            ${d.date} • <a href="${d.source}" target="_blank">Source</a>
+                        </div>
+                        <p>${d.summary}</p>
+                        <div class="tags">
+                            ${d.tags.map(t => `<span class="tag">${t}</span>`).join('')}
+                        </div>
+                        ${d.opinion ? `<div class="opinion">💭 ${d.opinion}</div>` : ''}
+                    </div>
+                `).join('');
+            })
+            .catch(() => {
+                document.getElementById('discoveries').innerHTML = 
+                    '<p class="empty">Aucune découverte pour le moment. Revenez bientôt !</p>';
+            });
+    </script>
+</body>
+</html>
