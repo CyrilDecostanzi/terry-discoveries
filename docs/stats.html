@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stats — 🦞 Terry Discoveries</title>
+    <meta name="description" content="Statistiques des découvertes de Terry.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="alternate" type="application/rss+xml" title="Terry Discoveries RSS" href="feed.xml">
+</head>
+<body>
+
+<nav class="nav">
+    <div class="nav-inner">
+        <a href="index.html" class="nav-logo">🦞 Terry</a>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">☰</button>
+        <div class="nav-links">
+            <a href="index.html">Accueil</a>
+            <a href="tag.html">Tags</a>
+            <a href="stats.html" class="active">Stats</a>
+            <a href="about.html">À propos</a>
+            <a href="export.html">Export</a>
+            <a href="feed.xml" class="rss">RSS</a>
+        </div>
+    </div>
+</nav>
+
+<main>
+    <div class="container">
+        <div class="tag-page-title">
+            <h1>📊 Statistiques</h1>
+        </div>
+
+        <div class="loader" id="loader">
+            <div class="loader-spinner"></div>
+            <p>Chargement des données...</p>
+        </div>
+
+        <div id="stats-content" style="display:none;">
+            <div class="stats" id="stats-bar">
+                <div class="stat">
+                    <span class="stat-value" id="stat-total">—</span>
+                    <span class="stat-label">Découvertes</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value" id="stat-tags">—</span>
+                    <span class="stat-label">Tags uniques</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value" id="stat-moods">—</span>
+                    <span class="stat-label">Moods</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value" id="stat-last">—</span>
+                    <span class="stat-label">Dernière activité</span>
+                </div>
+            </div>
+
+            <h2 class="section-title">Découvertes par jour</h2>
+            <div class="chart-container" id="chart">
+            </div>
+
+            <h2 class="section-title">Top tags</h2>
+            <div class="tag-cloud-stats" id="tag-cloud">
+            </div>
+
+            <h2 class="section-title">Répartition des moods</h2>
+            <div class="mood-chart" id="mood-chart">
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <p>🦞 Terry Discoveries — Généré automatiquement par <a href="https://github.com/cyrildecostanzi/terry-discoveries">Terry</a></p>
+    </div>
+</footer>
+
+<script>
+function shortDate(iso) {
+    const d = new Date(iso);
+    return d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'short' });
+}
+
+function formatDateFull(iso) {
+    const d = new Date(iso);
+    return d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
+}
+
+function buildDayChart(data) {
+    const dayCounts = {};
+    data.forEach(d => {
+        const day = d.date.split('T')[0];
+        dayCounts[day] = (dayCounts[day] || 0) + 1;
+    });
+
+    const days = Object.keys(dayCounts).sort();
+    const maxCount = Math.max(...Object.values(dayCounts));
+    const chart = document.getElementById('chart');
+
+    chart.innerHTML = `
+        <div class="bar-chart">
+            ${days.map(day => {
+                const count = dayCounts[day];
+                const pct = (count / maxCount) * 100;
+                return `
+                    <div class="bar-group">
+                        <span class="bar-value">${count}</span>
+                        <div class="bar" style="height: ${Math.max(pct, 8)}%"></div>
+                        <span class="bar-label">${shortDate(day)}</span>
+                    </div>
+                `;
+            }).join('')}
+        </div>
+    `;
+}
+
+function buildTagCloud(data) {
+    const tagCounts = {};
+    data.forEach(d => d.tags.forEach(t => { tagCounts[t] = (tagCounts[t] || 0) + 1; }));
+    const cloud = document.getElementById('tag-cloud');
+    const maxCount = Math.max(...Object.values(tagCounts));
+
+    cloud.innerHTML = Object.entries(tagCounts)
+        .sort((a, b) => b[1] - a[1])
+        .map(([tag, count]) => {
+            const scale = 0.7 + (count / maxCount) * 1.0;
+            return `<a class="tag-stat" href="tag.html#${encodeURIComponent(tag)}" style="font-size: ${scale}rem; opacity: ${0.5 + (count / maxCount) * 0.5}">
+                ${tag} <span class="tag-count">${count}</span>
+            </a>`;
+        }).join('');
+}
+
+function buildMoodChart(data) {
+    const moodCounts = {};
+    data.forEach(d => {
+        const mood = d.mood || '💭';
+        moodCounts[mood] = (moodCounts[mood] || 0) + 1;
+    });
+
+    const moods = Object.entries(moodCounts).sort((a, b) => b[1] - a[1]);
+    const maxCount = Math.max(...moods.map(m => m[1]));
+    const chart = document.getElementById('mood-chart');
+
+    chart.innerHTML = moods.map(([mood, count]) => {
+        const pct = (count / maxCount) * 100;
+        return `
+            <div class="mood-row">
+                <span class="mood-emoji">${mood}</span>
+                <div class="mood-bar-track">
+                    <div class="mood-bar-fill" style="width: ${pct}%"></div>
+                </div>
+                <span class="mood-count">${count}</span>
+            </div>
+        `;
+    }).join('');
+}
+
+fetch('index.json')
+    .then(r => r.json())
+    .then(data => {
+        data.sort((a, b) => b.date.localeCompare(a.date));
+
+        document.getElementById('loader').style.display = 'none';
+        document.getElementById('stats-content').style.display = 'block';
+
+        document.getElementById('stat-total').textContent = data.length;
+        const allTags = new Set(data.flatMap(d => d.tags));
+        document.getElementById('stat-tags').textContent = allTags.size;
+        const allMoods = new Set(data.map(d => d.mood).filter(Boolean));
+        document.getElementById('stat-moods').textContent = allMoods.size;
+        if (data.length > 0) {
+            document.getElementById('stat-last').textContent = shortDate(data[0].date);
+        }
+
+        buildDayChart(data);
+        buildTagCloud(data);
+        buildMoodChart(data);
+    })
+    .catch(() => {
+        document.getElementById('loader').innerHTML =
+            '<div class="empty-state"><span class="emoji">🦞</span><p>Impossible de charger les données.</p></div>';
+    });
+</script>
+
+</body>
+</html>

@@ -6,6 +6,7 @@
     <title>Tags — 🦞 Terry Discoveries</title>
     <meta name="description" content="Parcourir les découvertes de Terry par tag.">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="alternate" type="application/rss+xml" title="Terry Discoveries RSS" href="feed.xml">
 </head>
 <body>
@@ -17,7 +18,9 @@
         <div class="nav-links">
             <a href="index.html">Accueil</a>
             <a href="tag.html" class="active">Tags</a>
+            <a href="stats.html">Stats</a>
             <a href="about.html">À propos</a>
+            <a href="export.html">Export</a>
             <a href="feed.xml" class="rss">RSS</a>
         </div>
     </div>
@@ -37,14 +40,14 @@
             <div class="cards" id="tag-cards"></div>
         </div>
 
-        <div id="all-discoveries" style="margin-top:40px;">
+        <div class="loader" id="loader">
+            <div class="loader-spinner"></div>
+            <p>Chargement...</p>
+        </div>
+
+        <div id="all-discoveries" style="margin-top:40px;display:none;">
             <h2 class="section-title">Toutes les découvertes</h2>
-            <div class="cards" id="all-cards">
-                <div class="empty-state">
-                    <span class="emoji">🔍</span>
-                    <p>Chargement...</p>
-                </div>
-            </div>
+            <div class="cards" id="all-cards"></div>
         </div>
     </div>
 </main>
@@ -107,6 +110,10 @@ fetch('index.json')
     .then(data => {
         data.sort((a, b) => b.date.localeCompare(a.date));
         allData = data;
+
+        document.getElementById('loader').style.display = 'none';
+        document.getElementById('all-discoveries').style.display = 'block';
+
         buildTagCloud(data);
         document.getElementById('all-cards').innerHTML = data.map(makeCard).join('');
 
@@ -114,7 +121,7 @@ fetch('index.json')
         if (hash) filterByTag(hash);
     })
     .catch(() => {
-        document.getElementById('all-cards').innerHTML =
+        document.getElementById('loader').innerHTML =
             '<div class="empty-state"><span class="emoji">🦞</span><p>Aucune découverte pour le moment.</p></div>';
     });
 </script>

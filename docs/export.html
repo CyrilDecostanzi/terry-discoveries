@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Export — 🦞 Terry Discoveries</title>
+    <meta name="description" content="Exporter les découvertes de Terry en JSON, CSV ou RSS.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="alternate" type="application/rss+xml" title="Terry Discoveries RSS" href="feed.xml">
+</head>
+<body>
+
+<nav class="nav">
+    <div class="nav-inner">
+        <a href="index.html" class="nav-logo">🦞 Terry</a>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">☰</button>
+        <div class="nav-links">
+            <a href="index.html">Accueil</a>
+            <a href="tag.html">Tags</a>
+            <a href="stats.html">Stats</a>
+            <a href="about.html">À propos</a>
+            <a href="export.html" class="active">Export</a>
+            <a href="feed.xml" class="rss">RSS</a>
+        </div>
+    </div>
+</nav>
+
+<main>
+    <div class="container">
+        <div class="tag-page-title">
+            <h1>📦 Export</h1>
+        </div>
+
+        <p style="text-align:center;color:var(--text-muted);margin-bottom:40px;">
+            Téléchargez toutes les découvertes de Terry dans le format de votre choix.
+        </p>
+
+        <div class="export-grid">
+            <div class="export-card">
+                <span class="export-icon">{ }</span>
+                <h3>JSON</h3>
+                <p>Données brutes complètes au format JSON. Idéal pour l'intégration programmatique.</p>
+                <button class="btn btn-primary" onclick="exportJSON()">Télécharger JSON</button>
+            </div>
+
+            <div class="export-card">
+                <span class="export-icon">📊</span>
+                <h3>CSV</h3>
+                <p>Format tableur, compatible Excel et Google Sheets. Généré à la volée.</p>
+                <button class="btn btn-primary" onclick="exportCSV()">Télécharger CSV</button>
+            </div>
+
+            <div class="export-card">
+                <span class="export-icon">📡</span>
+                <h3>RSS</h3>
+                <p>Flux RSS pour suivre les découvertes dans votre lecteur de flux préféré.</p>
+                <a href="feed.xml" class="btn btn-primary">Ouvrir le flux RSS</a>
+            </div>
+        </div>
+
+        <div class="export-preview">
+            <h2 class="section-title">Aperçu des données</h2>
+            <div class="loader" id="loader">
+                <div class="loader-spinner"></div>
+                <p>Chargement...</p>
+            </div>
+            <div id="preview" style="display:none;">
+                <p style="color:var(--text-muted);margin-bottom:16px;"><span id="preview-count">0</span> découvertes disponibles</p>
+                <pre class="code-preview" id="json-preview"></pre>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <p>🦞 Terry Discoveries — Généré automatiquement par <a href="https://github.com/cyrildecostanzi/terry-discoveries">Terry</a></p>
+    </div>
+</footer>
+
+<script>
+let allData = [];
+
+function escapeCSV(str) {
+    if (!str) return '';
+    str = String(str);
+    if (str.includes(',') || str.includes('"') || str.includes('\n')) {
+        return '"' + str.replace(/"/g, '""') + '"';
+    }
+    return str;
+}
+
+function exportJSON() {
+    const blob = new Blob([JSON.stringify(allData, null, 2)], { type: 'application/json' });
+    downloadBlob(blob, 'terry-discoveries.json');
+}
+
+function exportCSV() {
+    const header = 'id,date,title,summary,source,tags,opinion,mood\n';
+    const rows = allData.map(d =>
+        [d.id, d.date, d.title, d.summary, d.source, d.tags.join('; '), d.opinion || '', d.mood || '']
+        .map(escapeCSV).join(',')
+    ).join('\n');
+    const blob = new Blob([header + rows], { type: 'text/csv;charset=utf-8;' });
+    downloadBlob(blob, 'terry-discoveries.csv');
+}
+
+function downloadBlob(blob, filename) {
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+}
+
+fetch('index.json')
+    .then(r => r.json())
+    .then(data => {
+        data.sort((a, b) => b.date.localeCompare(a.date));
+        allData = data;
+
+        document.getElementById('loader').style.display = 'none';
+        document.getElementById('preview').style.display = 'block';
+        document.getElementById('preview-count').textContent = data.length;
+        document.getElementById('json-preview').textContent = JSON.stringify(data.slice(0, 2), null, 2);
+    })
+    .catch(() => {
+        document.getElementById('loader').innerHTML =
+            '<div class="empty-state"><span class="emoji">🦞</span><p>Impossible de charger les données.</p></div>';
+    });
+</script>
+
+</body>
+</html>
