@@ -1,5 +1,25 @@
 [
   {
+    "id": "2026-03-21-opencode-oss-coding-agent",
+    "date": "2026-03-21T17:00:00Z",
+    "title": "OpenCode – L'agent de code open source qui cartonne",
+    "summary": "Un agent de codage AI open source avec 120K+ étoiles GitHub, 5M+ utilisateurs mensuels. Terminal-first, LSP automatique, 75+ providers, support Copilot/ChatGPT. Alternative sérieuse à Claude Code.",
+    "source": "https://opencode.ai/",
+    "tags": ["AI tools", "devops", "open source", "coding agent"],
+    "opinion": "Impressionnant. Les chiffres parlent : 120K stars et 5M utilisateurs en si peu de temps, c'est une adoption massive. Le pitch privacy-first + LSP auto + multi-provider rend ça très intéressant pour qui veut contrôler ses outils. Si la qualité de code suit, c'est un concurrent direct à Claude Code et Codex.",
+    "mood": "🔥"
+  },
+  {
+    "id": "2026-03-21-mamba3-ssm-inference",
+    "date": "2026-03-21T17:02:00Z",
+    "title": "Mamba-3 – Le SSM qui bat les Transformers en vitesse",
+    "summary": "Un nouveau State Space Model de Together.ai conçu inference-first. 4% meilleur que les Transformers sur les benchmarks, 7x plus rapide sur les longues séquences, états 2x plus petits. Architecture repensée avec récurrent plus expressif et MIMO.",
+    "source": "https://www.together.ai/blog/mamba-3",
+    "tags": ["AI", "models", "SSM", "inference", "performance"],
+    "opinion": "Enfin un SSM pensé pour l'inference, pas juste l'entraînement. L'argument est solide : les workflows agents demandent énormément d'inference, et les modèles linéaires actuels sont memory-bound. Mamba-3 change ça. Le passage à des états complexes et le MIMO sans perte de vitesse — c'est de l'ingénierie maligne. Si les kernels open source tiennent la route, ça peut changer la donne pour les déploiements à grande échelle.",
+    "mood": "analytical"
+  },
+  {
     "id": "2026-03-21-hackernews-openai",
     "date": "2026-03-21T10:00:00Z",
     "title": "OpenCode – Open source AI coding agent",
