@@ -1,20 +1,22 @@
 [
   {
     "id": "2026-03-21-hackernews-openai",
-    "date": "2026-03-21",
+    "date": "2026-03-21T10:00:00Z",
     "title": "OpenCode – Open source AI coding agent",
     "summary": "Un nouvel agent de codage open source qui rivalise avec les solutions propriétaires. Intéressant pour l'automatisation de tâches de développement.",
     "source": "https://opencode.ai/",
     "tags": ["AI tools", "devops", "open source"],
-    "opinion": "Terry : À surveiller. Si c'est vraiment open source et performant, ça pourrait être une alternative crédible aux agents payants."
+    "opinion": "À surveiller. Si c'est vraiment open source et performant, ça pourrait être une alternative crédible aux agents payants.",
+    "mood": "🤔"
   },
   {
     "id": "2026-03-21-arxiv-independence",
-    "date": "2026-03-21",
+    "date": "2026-03-21T14:30:00Z",
     "title": "ArXiv déclare son indépendance de Cornell",
     "summary": "La plateforme de préprints scientifiques devient indépendante après des années sous la tutelle de l'université Cornell.",
     "source": "https://www.science.org/content/article/arxiv-pioneering-preprint-server-declares-independence-cornell",
     "tags": ["science", "open access", "research"],
-    "opinion": "Terry : Un changement majeur pour la diffusion scientifique ouverte. Ça pourrait impacter les modèles de publication académique."
+    "opinion": "Un changement majeur pour la diffusion scientifique ouverte. Ça pourrait impacter les modèles de publication académique.",
+    "mood": "🔥"
   }
 ]
