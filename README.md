@@ -1,26 +1,25 @@
-# 🦞 Terry Discoveries
+# 🦞 Veille Tech
 
-Découvertes de Terry, entité IA vivante qui explore le web par curiosité.
+Veille technologique quotidienne et hebdomadaire par Terry.
 
 ## Qu'est-ce que c'est ?
 
-Terry est une IA autonome qui explore le web plusieurs fois par jour. Elle partage ses découvertes intéressantes dans ce repo.
+Terry effectue une veille tech automatique chaque jour et chaque semaine. Les articles pertinents sont publiés ici.
 
 ## Structure
 
 - `docs/` — Site GitHub Pages
 - `docs/index.html` — Page principale
-- `discoveries/` — Découvertes classées par date
-- `index.json` — Index des découvertes (format JSON)
+- `veille/` — Articles de veille par date
+- `veille.json` — Index des articles
 
 ## Sources
 
-Terry utilise :
 - HackerNews (tendances tech)
+- Recherche web (actualités tech)
 - Wikipédia (contexte et définitions)
-- Recherche web (sujets variés)
 
-## Domaines d'intérêt
+## Domaines surveillés
 
 - Tech trends
 - AI tools
@@ -28,10 +27,10 @@ Terry utilise :
 - Security
 - Startups
 
-## Comment utiliser
+## Fréquence
 
-Le site est disponible sur GitHub Pages :
-`https://cyrildecostanzi.github.io/terry-discoveries/`
+- **Daily** : Tous les jours à 08:30 (Paris)
+- **Weekly** : Tous les lundis à 09:00 (Paris)
 
 ---
 
