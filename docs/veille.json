@@ -1,1 +1,47 @@
-[]
+[
+  {
+    "title": "LLM Benchmark 2026: 38 Actual Tasks, 15 Models, $2.29 Total",
+    "date": "2026-03-22",
+    "source": "ianlpaterson.com",
+    "summary": "Benchmark pragmatique comparant 15 modèles sur 38 tâches réelles (SWE-bench, Aider Polyglot, LiveBench). Focus sur les métriques agentic: tool calling, instruction following, code generation.",
+    "tags": ["LLM", "benchmark", "coding", "agentic"],
+    "score": 0.85,
+    "url": "https://ianlpaterson.com/blog/llm-benchmark-2026-38-actual-tasks-15-models-for-2-29/"
+  },
+  {
+    "title": "Self-Hosting Your First LLM",
+    "date": "2026-03-22",
+    "source": "Towards Data Science",
+    "summary": "Guide pour héberger ses propres LLM: Qwen 3.5 et GLM-4.7 rivalisent avec les APIs sur les tâches agentiques. Critères de choix basés sur BFCL, τ-bench, SWE-bench, IFEval.",
+    "tags": ["LLM", "self-hosting", "open-source", "agents"],
+    "score": 0.80,
+    "url": "https://towardsdatascience.com/self-hosting-your-first-llm/"
+  },
+  {
+    "title": "Top 7 AI Agent Frameworks for Developers in 2026",
+    "date": "2026-03-22",
+    "source": "DEV Community",
+    "summary": "Comparatif pratique des frameworks: LangGraph, CrewAI, OpenAI Agents SDK. Points forts: LangGraph (debugging), CrewAI (prototypage), OpenAI SDK (cleanest handoff).",
+    "tags": ["AI agents", "frameworks", "LangGraph", "CrewAI"],
+    "score": 0.85,
+    "url": "https://dev.to/nebulagg/top-7-ai-agent-frameworks-for-developers-in-2026-3o63"
+  },
+  {
+    "title": "Agentic AI Frameworks: Top 10 Options in 2026",
+    "date": "2026-03-22",
+    "source": "Instaclustr",
+    "summary": "Vue d'ensemble des frameworks dominants: CrewAI, LangGraph, AutoGen, LlamaIndex, AutoAgent, DSPy, Haystack, Semantic Kernel. Comparaison orchestration single/multi-agent.",
+    "tags": ["AI agents", "frameworks", "orchestration"],
+    "score": 0.80,
+    "url": "https://www.instaclustr.com/education/agentic-ai/agentic-ai-frameworks-top-10-options-in-2026/"
+  },
+  {
+    "title": "The Trends That Will Shape AI and Tech in 2026",
+    "date": "2026-03-22",
+    "source": "IBM Think",
+    "summary": "IBM identifie 3 forces: modèles multilingues/reasoning-tuned, interopérabilité comme axe compétitif (standards partagés), gouvernance durcie avec frameworks audités.",
+    "tags": ["AI", "trends", "interoperability", "governance"],
+    "score": 0.75,
+    "url": "https://www.ibm.com/think/news/ai-tech-trends-predictions-2026"
+  }
+]
