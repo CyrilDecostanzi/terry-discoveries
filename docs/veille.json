@@ -1,5 +1,50 @@
 [
   {
+    "title": "Best LLMs for Coding in 2026: Top 15 Models Compared by Benchmarks",
+    "date": "2026-03-23",
+    "source": "EdenAI",
+    "summary": "Classement complet basé sur SWE-Bench Verified, LiveCodeBench, HumanEval et Coding Arena. Top 5: Claude Opus 4.6 (80.8%), Gemini 3.1 Pro (80.6%), GPT-5.4, GLM-5 (77.8%), Claude Opus 4.5 (80.9%).",
+    "tags": ["LLM", "coding", "benchmark", "performance"],
+    "score": 0.85,
+    "url": "https://www.edenai.co/post/best-llms-for-coding"
+  },
+  {
+    "title": "OpenClaw: Setting Up Your First Personal AI Agent",
+    "date": "2026-03-23",
+    "source": "Every.to",
+    "summary": "Guide pratique pour déployer un agent IA personnel avec OpenClaw. Démos, workflows et leçons apprises pour créer des agents 24/7 qui gèrent tâches, messages et orchestration multi-app.",
+    "tags": ["OpenClaw", "AI agents", "tutorial", "self-hosting"],
+    "score": 0.85,
+    "url": "https://every.to/source-code/openclaw-setting-up-your-first-personal-ai-agent"
+  },
+  {
+    "title": "2 Reasons I Turned Off My OpenClaw, My Personal AI Assistant",
+    "date": "2026-03-23",
+    "source": "Forbes",
+    "summary": "Retour d'expérience critique: l'auteur a désactivé OpenClaw après usage. Manque de contrôle sur les coûts et limitations sur l'orchestration proactive. 70% des features non reproduites par Claude.",
+    "tags": ["OpenClaw", "feedback", "cost", "limitations"],
+    "score": 0.80,
+    "url": "https://www.forbes.com/sites/paulbaier/2026/03/22/2-reasons-i-turned-off-my-openclaw-my-personal-ai-assistant/"
+  },
+  {
+    "title": "Free AI Agent: 7 Best Options to Create Your Own [2026]",
+    "date": "2026-03-23",
+    "source": "Gurusup",
+    "summary": "Comparatif des options gratuites pour créer un agent IA: ChatGPT GPTs, Google Gemini, n8n, LangChain, CrewAI. Nuances sur les limites, coûts d'infrastructure et compétences requises.",
+    "tags": ["AI agents", "free", "comparison", "tools"],
+    "score": 0.75,
+    "url": "https://gurusup.com/blog/free-ai-agent"
+  },
+  {
+    "title": "Baidu Joins China's OpenClaw Frenzy With New AI Agents",
+    "date": "2026-03-23",
+    "source": "Reuters",
+    "summary": "Baidu intègre OpenClaw dans ses enceintes intelligentes Xiaodu, permettant aux commandes vocales de déclencher des tâches complexes. OpenClaw reste imparfait: erreurs, détours, complications.",
+    "tags": ["OpenClaw", "Baidu", "China", "adoption"],
+    "score": 0.80,
+    "url": "https://www.reuters.com/business/media-telecom/baidu-joins-chinas-openclaw-frenzy-with-new-ai-agents-2026-03-17/"
+  },
+  {
     "title": "LLM Benchmark 2026: 38 Actual Tasks, 15 Models, $2.29 Total",
     "date": "2026-03-22",
     "source": "ianlpaterson.com",
