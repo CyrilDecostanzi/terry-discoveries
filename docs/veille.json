@@ -1,5 +1,59 @@
 [
   {
+    "title": "Dapr Agents v1.0: Production-Grade AI Agents at CNCF",
+    "date": "2026-03-24",
+    "source": "CNCF",
+    "summary": "Dapr Agents v1.0 disponible en GA: framework Python pour agents IA résilients en production. Workflows durables, state management, recovery automatique, communication sécurisée. Intégré Kubernetes.",
+    "tags": ["AI agents", "Dapr", "Kubernetes", "CNCF", "frameworks"],
+    "score": 0.90,
+    "url": "https://www.cncf.io/announcements/2026/03/23/general-availability-of-dapr-agents-delivers-production-reliability-for-enterprise-ai/"
+  },
+  {
+    "title": "NemoClaw: Nvidia's Secure OpenClaw Distribution",
+    "date": "2026-03-24",
+    "source": "CNET",
+    "summary": "Nvidia lance NemoClaw: OpenClaw avec sécurité renforcée, sandbox isolé, policy guardrails, privacy router. Setup en une commande. Optimisé RTX 24/7. Dell lance NemoClaw supercomputer.",
+    "tags": ["OpenClaw", "Nvidia", "security", "enterprise", "NemoClaw"],
+    "score": 0.88,
+    "url": "https://www.cnet.com/tech/services-and-software/nvidia-wants-to-make-it-easier-to-create-an-openclaw-ai-agent/"
+  },
+  {
+    "title": "How to Build an AI Agent: Complete Guide 2026",
+    "date": "2026-03-24",
+    "source": "The AI Corner",
+    "summary": "Guide complet pour créer des agents IA: les 4 composants (LLM, mémoire, tools, runtime), ROI moyen 171% en entreprise, marché $9B en 2026 (+46% CAGR). Stack technique et system prompts prêts à l'emploi.",
+    "tags": ["AI agents", "tutorial", "frameworks", "ROI"],
+    "score": 0.85,
+    "url": "https://www.the-ai-corner.com/p/how-to-build-ai-agent-guide-2026"
+  },
+  {
+    "title": "Top AI-Powered DevOps Tools for 2026",
+    "date": "2026-03-24",
+    "source": "StackGen",
+    "summary": "12 outils DevOps IA analysés: le paradoxe Copilot (vitesse code ≠ vitesse déploiement), incident P1 = 4h moyenne, platform teams comme bottleneck. Tools: LinearB, K8s troubleshooting AI, compliance automation.",
+    "tags": ["DevOps", "AI", "tools", "automation", "DORA"],
+    "score": 0.82,
+    "url": "https://stackgen.com/blog/top-ai-powered-devops-tools-2026"
+  },
+  {
+    "title": "LLM Benchmarks: What They Actually Measure",
+    "date": "2026-03-24",
+    "source": "LXT",
+    "summary": "Analyse critique des benchmarks: saturation (GSM8K à 99%), contamination des données d'entraînement, gap entre scores académiques et production. 15 benchmarks actifs, 4 prédictifs pour la prod.",
+    "tags": ["LLM", "benchmark", "evaluation", "production"],
+    "score": 0.80,
+    "url": "https://www.lxt.ai/blog/llm-benchmarks/"
+  },
+  {
+    "title": "Production Linux VPS: Security Hardening Guide",
+    "date": "2026-03-24",
+    "source": "DEV Community",
+    "summary": "Série complète hardening VPS: Ed25519 keys, fail2ban avec nftables, Docker security (DOCKER-USER chain), Caddy hardening, systemd sandboxing, auditd. Checklist complète du premier login au disaster recovery.",
+    "tags": ["Linux", "security", "hardening", "VPS", "DevOps"],
+    "score": 0.78,
+    "url": "https://dev.to/jonesrussell/production-linux-secure-and-maintain-your-own-vps-9ij"
+  },
+  {
     "title": "Best LLMs for Coding in 2026: Top 15 Models Compared by Benchmarks",
     "date": "2026-03-23",
     "source": "EdenAI",
@@ -25,15 +79,6 @@
     "tags": ["OpenClaw", "feedback", "cost", "limitations"],
     "score": 0.80,
     "url": "https://www.forbes.com/sites/paulbaier/2026/03/22/2-reasons-i-turned-off-my-openclaw-my-personal-ai-assistant/"
-  },
-  {
-    "title": "Free AI Agent: 7 Best Options to Create Your Own [2026]",
-    "date": "2026-03-23",
-    "source": "Gurusup",
-    "summary": "Comparatif des options gratuites pour créer un agent IA: ChatGPT GPTs, Google Gemini, n8n, LangChain, CrewAI. Nuances sur les limites, coûts d'infrastructure et compétences requises.",
-    "tags": ["AI agents", "free", "comparison", "tools"],
-    "score": 0.75,
-    "url": "https://gurusup.com/blog/free-ai-agent"
   },
   {
     "title": "Baidu Joins China's OpenClaw Frenzy With New AI Agents",
