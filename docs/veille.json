@@ -1,5 +1,50 @@
 [
   {
+    "title": "Local LLM Inference in 2026: Complete Guide to Tools, Hardware & Open-Weight Models",
+    "date": "2026-03-25",
+    "source": "StarMorph Blog",
+    "summary": "Guide complet sur l'inférence locale: comparaison de 10 outils (Ollama, LM Studio, vLLM, llama.cpp...), quantization Q4_K_M comme sweet spot, hardware à tous les budgets. Mac Mini M4 Pro 48GB ($1999) recommandé. GLM-5, MiniMax M2, Hermes 4 analysés.",
+    "tags": ["LLM", "self-hosting", "local-inference", "Ollama", "open-weights"],
+    "score": 0.88,
+    "url": "https://blog.starmorph.com/blog/local-llm-inference-tools-guide"
+  },
+  {
+    "title": "Best Open-Source AI Agent Frameworks 2026: The LAMP Moment for Agents",
+    "date": "2026-03-25",
+    "source": "AgentConn",
+    "summary": "L'architecture agent se standardise: model → runtime → harness → agent. Comparaison LangChain Deep Agents, CrewAI, OpenClaw, AutoGen, Agency Swarm. OpenClaw mentionné comme framework open-source de référence pour agents personnels.",
+    "tags": ["AI agents", "frameworks", "OpenClaw", "LangChain", "architecture"],
+    "score": 0.87,
+    "url": "https://agentconn.com/blog/best-open-source-ai-agent-frameworks-2026/"
+  },
+  {
+    "title": "Best LLM for Coding March 2026: GPT-5.4 vs Claude 4.6 vs GLM-5 vs Kimi K2.5",
+    "date": "2026-03-25",
+    "source": "Kanaries",
+    "summary": "Comparaison complète des LLM de coding: GPT-5.4 (premier GPT-5 généraliste avec capacités Codex), Claude Opus 4.6, Gemini 3.1 Pro, GLM-5, Kimi K2.5. Analyse par use case: software engineering vs tool-heavy execution vs environment-aware.",
+    "tags": ["LLM", "coding", "benchmark", "GPT-5", "Claude", "performance"],
+    "score": 0.82,
+    "url": "https://docs.kanaries.net/articles/best-llm-for-coding"
+  },
+  {
+    "title": "Best 8 Open Source LLMs for Custom Solutions in 2026",
+    "date": "2026-03-25",
+    "source": "Ryz Labs",
+    "summary": "Guide des LLM open-source pour solutions custom: GPT-4 Turbo v4.0 (MIT License), LLaMA 3, GPT-NeoX, critères de sélection détaillés (performance, scalabilité, customisation, community, documentation, licensing).",
+    "tags": ["LLM", "open-source", "custom-solutions", "benchmark"],
+    "score": 0.80,
+    "url": "https://learn.ryzlabs.com/llm-development/best-8-open-source-llms-for-custom-solutions-in-2026"
+  },
+  {
+    "title": "Tecno Taps OpenClaw to Supercharge Ella AI Assistant",
+    "date": "2026-03-25",
+    "source": "Android Central",
+    "summary": "Tecno intègre OpenClaw dans son assistant Ella: automatisation de tâches, orchestration multi-app. Open-source permet aux OEM de construire sur la base. Focus automation vs chatbot classique.",
+    "tags": ["OpenClaw", "Tecno", "Ella", "mobile", "automation"],
+    "score": 0.78,
+    "url": "https://www.androidcentral.com/phones/tecno-phones/tecno-taps-openclaw-to-supercharge-ella-ai-assistant"
+  },
+  {
     "title": "Dapr Agents v1.0: Production-Grade AI Agents at CNCF",
     "date": "2026-03-24",
     "source": "CNCF",
