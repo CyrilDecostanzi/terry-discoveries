@@ -1,5 +1,50 @@
 [
   {
+    "title": "RSAC 2026: DefenseClaw and the Rise of Agentic AI Security",
+    "date": "2026-03-26",
+    "source": "BizTech Magazine",
+    "summary": "Cisco annonce DefenseClaw au RSAC 2026: framework open-source pour sécuriser les agents IA tout au long de leur cycle. Intégration avec NVIDIA OpenShell. Les 3 piliers: protéger le monde des agents, protéger les agents du monde, détection à vitesse machine. 85% des entreprises expérimentent les agents, seulement 5% en prod à cause de la sécurité.",
+    "tags": ["security", "AI agents", "Cisco", "DefenseClaw", "OpenShell", "RSAC"],
+    "score": 0.90,
+    "url": "https://biztechmagazine.com/article/2026/03/rsac-2026-openclaw-and-rise-agentic-ai-security"
+  },
+  {
+    "title": "Self-Hosted LLM Leaderboard 2026: Complete Benchmark Rankings",
+    "date": "2026-03-26",
+    "source": "Onyx AI",
+    "summary": "Classement définitif des LLM self-hostables: comparaison qualité, vitesse, hardware, coût. Top performers: Kimi K2.5 (1450 Elo), GLM-4.7 (1441), Qwen 3.5 (1450), DeepSeek R1 (1398). VRAM requirements détaillés, licensing. Qwen 2.5-72B comme meilleur rapport qualité/ressources. GLM-5, DeepSeek V3.2 analysés.",
+    "tags": ["LLM", "self-hosting", "benchmark", "open-weights", "leaderboard"],
+    "score": 0.88,
+    "url": "https://onyx.app/self-hosted-llm-leaderboard"
+  },
+  {
+    "title": "120+ Agentic AI Tools Mapped Across 11 Categories",
+    "date": "2026-03-26",
+    "source": "StackOne",
+    "summary": "Cartographie complète du paysage agents IA Q1 2026: 120+ outils, 11 catégories. Frameworks, no-code builders, observability, memory/vector DBs, protocols (MCP/A2A), coding agents, enterprise platforms. Tendance 2026: chaque lab IA majeur a maintenant son framework (OpenAI SDK, Google ADK, Anthropic SDK, Microsoft Semantic Kernel, HuggingFace Smolagents).",
+    "tags": ["AI agents", "landscape", "frameworks", "tools", "ecosystem"],
+    "score": 0.85,
+    "url": "https://www.stackone.com/blog/ai-agent-tools-landscape-2026/"
+  },
+  {
+    "title": "I Tried 20+ AI Frameworks: Top 10 Recommendations for 2026",
+    "date": "2026-03-26",
+    "source": "Medium",
+    "summary": "Retour d'expérience après 150h et $400 sur 20 frameworks. Top 10: CrewAI (multi-agent teams), LangGraph (graph-based workflows), AutoGen (enterprise), Semantic Kernel (.NET), Smolagents (HuggingFace), OpenAI Agents SDK, Google ADK, Mastra (TypeScript-first). L'auteur passe de 'prompt engineer' à 'AI systems engineer' avec +65% de salaire.",
+    "tags": ["AI agents", "frameworks", "tutorial", "comparison", "experience"],
+    "score": 0.82,
+    "url": "https://medium.com/javarevisited/i-tried-20-ai-frameworks-here-are-my-top-10-recommendations-for-2026-927168fed61c"
+  },
+  {
+    "title": "Running Open Source LLMs Locally: Hardware Guide 2026",
+    "date": "2026-03-26",
+    "source": "Apatero Blog",
+    "summary": "Guide hardware pour LLM locaux: Llama 3.1 8B Instruct comme meilleur small model (rapide, bien supporté), Qwen 2.5 72B comme meilleur large model open-source (compétitif avec GPT-4). Recommandations VRAM, quantization, choix entre Ollama/LM Studio/vLLM selon use case.",
+    "tags": ["LLM", "self-hosting", "hardware", "local-inference", "guide"],
+    "score": 0.80,
+    "url": "https://apatero.com/blog/running-open-source-llms-locally-hardware-guide-2026"
+  },
+  {
     "title": "Local LLM Inference in 2026: Complete Guide to Tools, Hardware & Open-Weight Models",
     "date": "2026-03-25",
     "source": "StarMorph Blog",
